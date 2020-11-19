@@ -3,15 +3,17 @@ arch:
   - amd64
   - ppc64le
 python:
-  - "2.6"
   - "2.7"
-  - "3.2"
-  - "3.3"
   - "3.4"
   # PyPy versions
   - "pypy"  # PyPy2 2.5.0
   - "pypy3" # Pypy3 2.4.0
-  - "pypy-5.3.1"
+jobs:
+ exclude:
+   - arch : ppc64le
+     python : pypy
+   - arch : ppc64le
+     python : pypy3	
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
