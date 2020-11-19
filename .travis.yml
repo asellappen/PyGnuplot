@@ -9,11 +9,12 @@ python:
   - "pypy"  # PyPy2 2.5.0
   - "pypy3" # Pypy3 2.4.0
 jobs:
- exclude:
-   - arch : ppc64le
-     python : pypy
-   - arch : ppc64le
-     python : pypy3	
+  exclude:
+    - arch : ppc64le
+      python : pypy
+    - arch : ppc64le
+      python : pypy3
+      
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
